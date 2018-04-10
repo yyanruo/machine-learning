@@ -102,7 +102,7 @@ class Network(object):
 
     def calc_gradient(self, label):
         delta = self.layers[-1].activator.backward(self.layers[-1].output) * (
-            label - sefl.layers[-1].output)
+            label - self.layers[-1].output)
         for layer in self.layers[::-1]:
             layer.backward(delta)
             delta = layer.delta
